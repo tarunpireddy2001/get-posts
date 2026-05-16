@@ -43,7 +43,7 @@ def get_latest_giveaway_posts():
     posts = []
     subreddits = json.loads(os.getenv("SUB_NAMES"))
     print(f"Fetching from {len(subreddits)} subreddits...")
-    for i, subreddit_name in enumerate(subreddits):
+    for i, subreddit in enumerate(subreddits):
         for submission in reddit.subreddit(subreddit).new(limit=25):
             post = {
                 "data": {
